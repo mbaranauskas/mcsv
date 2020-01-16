@@ -1,14 +1,7 @@
 (ns mcsv.core
-  (:require [clojure.tools.cli :refer [parse-opts]])
+  (:require [clojure.tools.cli :refer [parse-opts]]
+            [mcsv.delimiters :refer [parse-delimiter]])
   (:gen-class))
-
-(def delimiters (hash-map ";" :semicolon
-                          "," :comma
-                          "t" :tab))
-
-(defn parse-delimiter 
-  [delimiter]
-  (get delimiters delimiter))
 
 (def cli-options
   ;; An option with a required argument
