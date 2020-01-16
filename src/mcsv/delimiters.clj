@@ -1,8 +1,8 @@
 (ns mcsv.delimiters)
 
-(def delimiters (hash-map ";" :semicolon
-                          "," :comma
-                          "\\t" :tab))
+(def delimiters (hash-map ";" ";"
+                          "," ","
+                          "\\t" "\t"))
 
 (defn parse-delimiter
   [delimiter]
