@@ -5,7 +5,8 @@
             :url "https://www.eclipse.org/legal/epl-2.0/"}
   :dependencies [
                  [org.clojure/clojure "1.10.0"]
-                 [org.clojure/tools.cli "0.4.2"]]
+                 [org.clojure/tools.cli "0.4.2"]
+                 [clojure-csv/clojure-csv "2.0.2"]]
   :main ^:skip-aot mcsv.core
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all}})
