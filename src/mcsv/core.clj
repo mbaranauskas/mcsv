@@ -16,12 +16,14 @@
    ;; A non-idempotent option (:default is applied first)
    ["-h" "--help"]])
 
-
+(defn read-csv [options]
+  (csv-file->maps
+   (first (get-in options [:arguments]))
+   (first (get-in options [:options :delimiter]))))
 
 (defn -main
   [& args]
   (let [options (parse-opts args cli-options)]
-    (println (csv-file->maps 
-              (first (get-in options [:arguments ]))
-              (first (get-in options [:options :delimiter]))) )
-    (println "Command: " options)))
+    (doseq 
+     [x (read-csv options)]
+      (println x))))
