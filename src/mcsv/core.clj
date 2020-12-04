@@ -23,7 +23,9 @@
 
 (defn -main
   [& args]
-  (let [options (parse-opts args cli-options)]
-    (doseq 
-     [x (read-csv options)]
-      (println x))))
+  (if (< 0 (count args))
+      (let [options (parse-opts args cli-options)]
+        (doseq 
+            [x (read-csv options)]
+          (println x)))
+      (println "No options provided")))
