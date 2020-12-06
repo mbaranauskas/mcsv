@@ -23,9 +23,10 @@
 
 (defn -main
   [& args]
+  (println args)
   (if (< 0 (count args))
-      (let [options (parse-opts args cli-options)]
-        (doseq 
-            [x (read-csv options)]
-          (println x)))
-      (println "No options provided")))
+    (let [options (parse-opts args cli-options)]
+                (doseq 
+                    [x (read-csv options)]
+                  (println x)))
+    (println "No options provided: mcsv -h for help.")))
